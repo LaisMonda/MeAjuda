@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-img src="/assets/icon/logo.png" id="logo"></ion-img> 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="title">Lista de contatos</div>
+  <div text-center>Seus contatos serão acionados caso você esteja em perigo, escolha com
+  cuidado as pessoas que você mais confia.</div>
+
+  <div *ngFor="let item of (listaContatos | async)" class="list">
+    <ion-item>
+      <ion-label>
+        {{item.nome}}
+      </ion-label>
+    </ion-item>
+  </div>
+  <ion-button class="button">Novo contato</ion-button>
+  <ion-button class="button">Excluir contato</ion-button>
+</ion-content>

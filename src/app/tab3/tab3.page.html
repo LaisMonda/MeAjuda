@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <ion-img src="/assets/icon/logo.png" id="logo"></ion-img> 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-card id="contador">
+      <ion-card-title style="text-align: center; color: white; border: black;">Número de denúncias encaminhadas:</ion-card-title>
+      <ion-card-content>
+      <h1 style="text-align: center; color: black; border: white; border-width: 5px;">X</h1>
+    </ion-card-content>
+    </ion-card>
+  
+    <ion-card style="padding: 10%;">
+      <ion-card-title style="text-align: center; color: black;">
+        Certifique-se de apertar esse botão somente em momento de extrema urgência.
+      </ion-card-title>
+      <ion-card-content style="text-align: center;">
+
+
+        <img [src]="currentImage" *ngIf="currentImage">
+
+        <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+            <ion-fab-button (click)="takePicture()" class="button" size="large" color="danger">
+              <ion-icon name="camera"></ion-icon>
+              S.O.S
+            </ion-fab-button>
+        </ion-fab>
+        
+      </ion-card-content>
+    </ion-card>
+  
+</ion-content>

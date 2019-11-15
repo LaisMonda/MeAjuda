@@ -1,0 +1,29 @@
+#logo{
+    height:80px;
+    width:80px;
+}
+#content{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+}
+.text{
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    padding: 5%;
+    --color:  rgb(230, 86, 158);
+}
+#btnDenuncia{
+    --background: rgb(230, 86, 158);
+}
+.radio{
+    --color-checked: rgb(230, 86, 158);
+}
+.checkbox{
+    --background-checked: rgb(230, 86, 158);
+    --border-color-checked:  rgb(230, 86, 158);
+}

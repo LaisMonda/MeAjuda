@@ -1,0 +1,145 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> 
+      <ion-img src="/assets/icon/logo.png" id="logo"></ion-img> 
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  
+    <div id="content">
+        
+    <ion-card class="text">
+     <ion-label> 
+      Olá, precisamos que você responda todo esse formulário corretamente 
+      para que sua denúncia seja encaminhada da melhor forma possível ao órgão 
+      público responsável.
+      <br>
+      As perguntas que serão feitas são semelhantes às perguntas que você receberia
+      caso fosse até uma delegacia. 
+      <br>
+      *Suas informações serão divulgadas somente para a delegacia mais próxima. 
+    </ion-label>
+    </ion-card>
+
+    <ion-list style="padding: 10%;">
+        <ion-label>Qual foi o tipo de violência sofrida?</ion-label>
+        <ion-item>
+          <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Física
+        </ion-item>
+        <ion-item>
+          <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Psicológica
+        </ion-item>
+        <ion-item>
+          <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Patrimonial
+        </ion-item>
+        <ion-item>
+          <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Sexual
+        </ion-item>
+        <ion-item>
+            <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Moral
+        </ion-item>
+    </ion-list>
+
+    <div style="padding: 10%;">
+    <ion-label>Qual era sua relação com o agressor?</ion-label>
+    <ion-list>
+        <ion-radio-group>
+          <ion-item>
+            <ion-label>Não conheço o agressor</ion-label>
+            <ion-radio name="relation" class="radio" value="desconhecido"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> Namorado / Marido </ion-label>
+            <ion-radio name="relation" class="radio" value="namorado"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> Ex namorado / Ex Marido </ion-label>
+            <ion-radio name="relation" class="radio" value="ex"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> Familiar (pai, tio, primo, etc) </ion-label>
+            <ion-radio name="relation" class="radio" value="familiar"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> Colega de trabalho </ion-label>
+            <ion-radio name="relation" class="radio" value="colega"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label> Amigo / conhecido </ion-label>
+            <ion-radio name="relation" class="radio" value="conhecido"></ion-radio>
+          </ion-item>
+          </ion-radio-group>
+      </ion-list>  
+    </div>
+
+    <div style="padding: 10%;">
+      <ion-label>Por gentileza, informe o endereço onde ocorreu o fato.</ion-label>
+      <ion-input placeholder="Endereço"></ion-input>
+      <ion-label>Agora, nos informe a data do ocorrido.</ion-label>
+      <ion-datetime displayFormat="DD MM YYYY" placeholder="Data do ocorrido"></ion-datetime>
+    </div>
+
+    <div style="padding: 10%;">
+      <ion-label>Este tipo de agressão já aconteceu mais vezes, 
+        ou essa foi a primeira vez?
+      </ion-label>
+      <ion-list>
+        <ion-radio-group>
+          <ion-item>
+            <ion-label>Já aconteceu antes</ion-label>
+            <ion-radio name="happened" class="radio" value="aconteceu"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Esta foi a primeira vez</ion-label>
+            <ion-radio name="happened" class="radio" value="naoAconteceu"></ion-radio>
+          </ion-item>
+          </ion-radio-group>
+      </ion-list>  
+    </div>
+
+    <div style="padding: 10%;">
+    <ion-label>Suas informações já foram coletadas. Agora, peço que
+      nos informe todas as informações possíveis sobre a pessoa que deseja denunciar.
+      Caso não saiba alguma das informações a seguir, deixe em branco. Lembre-se que quanto mais
+      informações você souber, mais rápido será o processo da sua denúncia.
+    </ion-label>
+    <ion-input placeholder="Nome completo"></ion-input>
+    <ion-datetime displayFormat="DD MM YYYY" placeholder="Data de nascimento"></ion-datetime>
+    <ion-input placeholder="Telefone"></ion-input>
+    <ion-input placeholder="CPF"></ion-input>
+    <ion-input placeholder="RG"></ion-input>
+    <ion-input placeholder="E-mail"></ion-input>
+    <ion-input placeholder="Endereço"></ion-input>
+    <ion-input placeholder="Local de trabalho"></ion-input>
+    </div>
+    
+    <div style="padding: 10%;">
+      <ion-label>Caso você não conheça seu agressor e não saiba nenhuma das informações acima,
+        pedimos que tente descrever o máximo de detalhes sobre essa pessoa, tais como suas características físicas 
+        (cabelo, cor da pele, roupas) e características de comportamento e personalidade.
+      </ion-label>
+      <ion-item>
+          <ion-textarea placeholder="Descrição"></ion-textarea>
+      </ion-item>
+    </div>
+
+    <div style="padding: 10%;">
+      <ion-label>Tente se lembrar de como tudo aconteceu, e escreva o máximo de detalhes que
+        conseguir sobre esse dia. Onde você estava, o que estava fazendo, o que motivou o
+        agressor, o que ele fez com você, etc.
+      </ion-label>
+      <ion-item>
+          <ion-textarea placeholder="Descrição"></ion-textarea>
+      </ion-item>
+    </div>
+
+    <ion-button id="btnDenuncia" (click)="presentAlert()">Enviar denúncia</ion-button>
+  </div>
+</ion-content>

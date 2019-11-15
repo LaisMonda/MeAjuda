@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title id="title">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="login">
+    <div id="center">
+        <ion-img src="/assets/icon/logo.png"  id="logo"></ion-img> 
+       
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input type="email" [(ngModel)]="email" placeholder="Email" required></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input type="password" id="passwordField" placeholder="Senha"
+                 required autocomplete="off" [(ngModel)]="pass"></ion-input>
+            </ion-item>   
+          </ion-col> 
+        </ion-row>
+      </ion-grid>
+        <ion-button id="btnLogin">Login</ion-button>
+      </div>
+      <a id="signup"> Cadastrar-se </a>
+</ion-content>

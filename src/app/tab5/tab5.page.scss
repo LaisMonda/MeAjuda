@@ -1,0 +1,26 @@
+#logo{
+    width:80px;
+    height:80px;
+}
+
+#btn{
+    --background: rgb(230, 86, 158);
+    color: white;
+    bottom:0;
+    width:50%;
+    height:50px;
+    flex-direction: column;
+    align-self: center; 
+}
+
+#profile{
+    align-content: center;
+    align-self:center;
+    padding: 15px;
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+.ion-list {
+    margin-top: 10px;
+}

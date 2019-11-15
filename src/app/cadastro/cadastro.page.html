@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title id="title">Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div id="content">
+        <ion-img src="/assets/icon/logo.png" id="logo"></ion-img> 
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-input id="loginField" placeholder="Nome completo" type="text" 
+                  [(ngModel)]="name" required></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input placeholder="Sexo" type="text" 
+                    [(ngModel)]="sex" required></ion-input>
+                  </ion-item>
+                <ion-item>
+                  <ion-input type="email" placeholder="Email" [(ngModel)]="email" required></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-datetime displayFormat="DD MM YYYY" placeholder="Data de Nascimento"
+                  [(ngModel)]="date" required></ion-datetime>
+                </ion-item>  
+                <ion-item>
+                    <ion-input type="text" placeholder="Endereço" [(ngModel)]="adress" required></ion-input>
+                  </ion-item>
+                <ion-item>
+                  <ion-input id="passwordField" placeholder="Senha" type="password" required 
+                  autocomplete="off" [(ngModel)]="pass"></ion-input>
+                </ion-item> 
+              </ion-col> 
+            </ion-row>
+          </ion-grid>
+            <ion-button id="btnCadastro">Cadastrar-se</ion-button>
+      </div>
+
+      <ion-icon name="help-circle-outline" id="help"></ion-icon>
+      <ion-item>
+          <ion-label (click)="about()">
+            Sobre
+          </ion-label>
+        </ion-item>
+</ion-content>
