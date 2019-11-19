@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
-//import { Geolocation } from '@ionic-native/geolocation/';
-//import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { Geolocation } from '@ionic-native/geolocation/';
+import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 
 
 declare var google;
@@ -12,14 +12,13 @@ declare var google;
   styleUrls: ['./tab4.page.scss'],
 })
 export class Tab4Page implements OnInit {
-/*
-  constructor(private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder) { }
-
+  
   // @ts-ignore
- @ViewChild('map') mapElement: ElementRef;
- map: any;
- address: string;
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
+  address: string;
 
+  constructor(private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder) {}
 
   ngOnInit() {
     this.loadMap();
@@ -75,7 +74,9 @@ export class Tab4Page implements OnInit {
         .catch((error: any) => {
           this.address = 'Endereço não disponível!';
         });
-        
+
   }
-*/
+
+
+
 }

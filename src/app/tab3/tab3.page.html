@@ -22,14 +22,11 @@
       <ion-card-content style="text-align: center;">
 
 
-        <img [src]="currentImage" *ngIf="currentImage">
 
-        <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-            <ion-fab-button (click)="takePicture()" class="button" size="large" color="danger">
+            <ion-button  class="button" size="large" color="danger">
               <ion-icon name="camera"></ion-icon>
               S.O.S
-            </ion-fab-button>
-        </ion-fab>
+            </ion-button>
         
       </ion-card-content>
     </ion-card>
