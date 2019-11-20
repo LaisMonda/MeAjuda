@@ -20,15 +20,17 @@
         Certifique-se de apertar esse botão somente em momento de extrema urgência.
       </ion-card-title>
       <ion-card-content style="text-align: center;">
-
-
-
-            <ion-button  class="button" size="large" color="danger">
+        
+            <ion-button (click)="takePicture()" class="button" size="large" color="danger">
               <ion-icon name="camera"></ion-icon>
               S.O.S
             </ion-button>
         
       </ion-card-content>
     </ion-card>
+
+    <div *ngIf="picture"> 
+      <img [src]="picture" >
+    </div>
   
 </ion-content>
