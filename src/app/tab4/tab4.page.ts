@@ -1,27 +1,26 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
-import { Geolocation } from '@ionic-native/geolocation/';
-import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+// import { Geolocation } from '@ionic-native/geolocation/';
+// import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
 
 
 declare var google;
 
 @Component({
   selector: 'app-tab4',
-  templateUrl: './tab4.page.html',
-  styleUrls: ['./tab4.page.scss'],
+  templateUrl: 'tab4.page.html',
+  styleUrls: ['tab.page.scss']
 })
 export class Tab4Page implements OnInit {
-  
   // @ts-ignore
   @ViewChild('map') mapElement: ElementRef;
   map: any;
   address: string;
 
-  constructor(private geolocation: Geolocation, private nativeGeocoder: NativeGeocoder) {}
+  constructor() {}
 
   ngOnInit() {
-    this.loadMap();
+   this.loadMap();
   }
 
   loadMap() {
