@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import {Router} from '@angular/router';
+import { DenunciaService } from '../denuncia.service';
+import { Denuncia } from '../model/denuncia';
+
+
 
 @Component({
   selector: 'app-myhelp',
@@ -8,7 +13,25 @@ import { AlertController } from '@ionic/angular';
 })
 export class MyhelpPage implements OnInit {
 
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController, private router: Router,
+  private servico: DenunciaService) { }
+
+    private tipoDenuncia: string;
+    private nomeDenunciado: string;
+    private dataDeNascDenunciado: string;
+    private enderecoDenunciado: string;
+    private telefoneDenunciado: string;
+    private RgDenunciado: string;
+    private cpfDenunciado: string;
+    private emailDenunciado: string;
+    private enderecoOcorrido: string;
+    private dataOcorrido: string;
+    private frequencia: string;
+    private relacaoVA : string;
+    private localDeTrabalho : string;
+    private descricaoAgressor : string;
+    private descricaoOcorrido : string;
+    private id_user : string;
 
   ngOnInit() {
   }
@@ -22,5 +45,34 @@ export class MyhelpPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  enviar(){
+    this.servico.insertDenuncia(this.tipoDenuncia, this.nomeDenunciado, this.dataDeNascDenunciado,
+    this.enderecoDenunciado, this.telefoneDenunciado, this.RgDenunciado, this.cpfDenunciado,
+    this.emailDenunciado, this.enderecoOcorrido, this.dataOcorrido, this.frequencia, this.relacaoVA, 
+    this.localDeTrabalho, this.descricaoAgressor, this.descricaoOcorrido, this.id_user); 
+      console.log(this.tipoDenuncia);
+      console.log(this.nomeDenunciado);
+      console.log(this.dataDeNascDenunciado);
+      console.log(this.enderecoDenunciado);
+      console.log(this.telefoneDenunciado);
+      console.log(this.RgDenunciado);
+      console.log(this.cpfDenunciado);
+      console.log(this.emailDenunciado);
+      console.log(this.enderecoOcorrido);
+      console.log(this.dataOcorrido);
+      console.log(this.frequencia);
+      console.log(this.relacaoVA);
+      console.log(this.localDeTrabalho);
+      console.log(this.descricaoAgressor);
+      console.log(this.descricaoOcorrido);
+      console.log(this.id_user);
+
+      this.router.navigateByUrl('/tabs/tab1');
+  }
+
+  turnBack(){
+    this.router.navigateByUrl('/tabs/tab1');
   }
 }

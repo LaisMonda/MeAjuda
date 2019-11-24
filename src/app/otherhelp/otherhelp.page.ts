@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import {Router} from '@angular/router';
+
 
 
 @Component({
@@ -9,7 +11,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class OtherhelpPage implements OnInit {
 
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController, private router: Router) { }
 
   ngOnInit() {
   }
@@ -23,5 +25,9 @@ export class OtherhelpPage implements OnInit {
     });
 
     await alert.present();
+  }
+  
+  turnBack(){
+    this.router.navigateByUrl('/tabs/tab1');
   }
 }

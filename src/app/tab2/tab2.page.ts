@@ -14,16 +14,18 @@ export class Tab2Page {
 
   listaContatos: Observable<Contato[]>
 
-  constructor(private servico: ContatoService,
-  private router: Router) {
+  constructor(private servico: ContatoService, private router: Router) {
     if  (this.router.getCurrentNavigation().extras.state != null) {
       this.usuario = this.router.getCurrentNavigation().extras.state.usuario;
       console.log(this.router.getCurrentNavigation().extras.state.usuario);
-      console.log(this.router.getCurrentNavigation().extras.state.senha);
    }
   }
 
   ngOnInit() {
+  }
+
+  cadastrar(){
+    this.router.navigateByUrl('/contato');
   }
 
 }

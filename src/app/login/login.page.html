@@ -1,6 +1,5 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title id="title">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -16,12 +15,12 @@
             </ion-item>
             <ion-item>
                 <ion-input type="password" id="passwordField" placeholder="Senha"
-                 required autocomplete="off" [(ngModel)]="pass"></ion-input>
+                 required autocomplete="off" [(ngModel)]="senha"></ion-input>
             </ion-item>   
           </ion-col> 
         </ion-row>
       </ion-grid>
-        <ion-button id="btnLogin">Login</ion-button>
+        <ion-button id="btnLogin" (click)="login()">Login</ion-button>
       </div>
       <a id="signup"> Cadastrar-se </a>
 </ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-icon id="arrow" name="md-arrow-round-back" size="large" (click)="turnBack()">
+      </ion-icon>
+      <ion-label id="top">Alterar dados</ion-label>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div id="content">
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input id="loginField" placeholder="Nome completo" type="text" 
+              [(ngModel)]="name" required value=""></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input placeholder="Sexo" type="text" 
+                [(ngModel)]="sex" required value=""></ion-input>
+              </ion-item>
+            <ion-item>
+              <ion-input type="email" placeholder="Email" [(ngModel)]="email"
+               required value=""></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-datetime displayFormat="DD MM YYYY" placeholder="Data de Nascimento"
+              [(ngModel)]="date" required></ion-datetime>
+            </ion-item>  
+            <ion-item>
+              <ion-input type="text" placeholder="Endereço" [(ngModel)]="adress"
+              required value=""></ion-input>
+            </ion-item>
+          </ion-col> 
+        </ion-row>
+      </ion-grid>
+        <ion-button id="btnAlterar" shape="round">Alterar dados</ion-button>
+      </div>
+</ion-content>

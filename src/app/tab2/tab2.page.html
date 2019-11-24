@@ -10,6 +10,9 @@
   <div class="title">Lista de contatos</div>
   <div text-center>Seus contatos serão acionados caso você esteja em perigo, escolha com
   cuidado as pessoas que você mais confia.</div>
+  
+  <ion-button class="button" (click)="cadastrar()">Novo contato</ion-button>
+
 
   <div *ngFor="let item of (listaContatos | async)" class="list">
     <ion-item>
@@ -18,6 +21,4 @@
       </ion-label>
     </ion-item>
   </div>
-  <ion-button class="button">Novo contato</ion-button>
-  <ion-button class="button">Excluir contato</ion-button>
 </ion-content>

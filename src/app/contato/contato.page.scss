@@ -1,0 +1,19 @@
+#arrow{
+    margin-left: 10px;
+    padding: 5px;
+}
+
+#top{
+    margin-left: 10px;
+    padding: 5px;
+}
+#content{
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    padding: 15%;
+}
+#btnCadastro{
+    --background: rgb(230, 86, 158);
+}

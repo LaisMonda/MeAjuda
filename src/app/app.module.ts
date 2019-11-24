@@ -6,19 +6,19 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+import { HttpClientModule } from '@angular/common/http'; 
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { CameraPreview, CameraPreviewPictureOptions,
   CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';
 
-//import { Geolocation } from '@ionic-native/geolocation/';
-//import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule],
   providers: [
     StatusBar,
     CameraPreview,  

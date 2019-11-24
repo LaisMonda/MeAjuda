@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { Observable } from 'rxjs';
 import { UsuarioService } from '../usuario.service';
 import { Usuario } from '../model/usuario';
 
@@ -12,23 +11,23 @@ import { Usuario } from '../model/usuario';
 })
 export class CadastroPage implements OnInit {
   private user: string;
-  private date: Date;
+  private date: string;
   private sexo: string;
   private telefone: string;
   private senha: string;
   private email: string;
   private endereco: string;
 
-
   constructor(private router: Router, private servico: UsuarioService) { 
-    servico.insertUser('lais','2002-09-19','feminino','67999190692 ','123456','lais.shadow@gmail.com','rua tal');
 
   }
 
   ngOnInit() {
   }
 
-  submitLogin() { 
+  cadastrar(){
+    this.servico.insertUser(this.user, this.date, this.sexo, this.telefone,
+    this.senha, this.email, this.endereco); 
     console.log(this.user);
     console.log(this.date);
     console.log(this.sexo);
@@ -36,9 +35,9 @@ export class CadastroPage implements OnInit {
     console.log(this.senha);
     console.log(this.email);
     console.log(this.endereco);
- 
- }
-
+    this.router.navigateByUrl('/tabs/tab1');
+  }
+  
   about(){
     this.router.navigateByUrl('/about');
   }

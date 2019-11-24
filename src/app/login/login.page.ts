@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { UsuarioService } from '../usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -7,17 +8,25 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  
   private email: string;
-  private pass: string;
+  private senha: string;
+  private id: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, 
+  private usuario: UsuarioService) { }
 
   ngOnInit() {
   }
+
+  login(email_user, senha_user) {
+    this.usuario.login(this.email, this.senha);
+    console.log(this.email);
+    console.log(this.senha);
+    console.log(this.id);
+  }
   
-  navegar(){
-    this.router.navigateByUrl('/tab1');
+  navegar(id){
+    this.router.navigateByUrl('/tab1', {state : {idenviado : id}});
   }
 
 }

@@ -24,27 +24,38 @@
 
     <ion-list style="padding: 10%;">
         <ion-label>Qual foi o tipo de violência sofrida?</ion-label>
-        <ion-item>
-          <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Física
-        </ion-item>
-        <ion-item>
-          <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Psicológica
-        </ion-item>
-        <ion-item>
-          <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Patrimonial
-        </ion-item>
-        <ion-item>
-          <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Sexual
-        </ion-item>
-        <ion-item>
-            <ion-checkbox class="checkbox" slot="end"></ion-checkbox> Moral
-        </ion-item>
-    </ion-list>
+          <ion-radio-group [(ngModel)]="tipoDenuncia">
+            <ion-item>
+              <ion-label>Física</ion-label>
+              <ion-radio name="relation" class="radio" value="física"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label> Psicológica</ion-label>
+              <ion-radio name="relation" class="radio" value="Psicológica"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label> Sexual </ion-label>
+              <ion-radio name="relation" class="radio" value="Sexual"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label> Moral </ion-label>
+              <ion-radio name="relation" class="radio" value="Moral"></ion-radio>
+            </ion-item>
+  
+            <ion-item>
+              <ion-label> Patrimonial </ion-label>
+              <ion-radio name="relation" class="radio" value="Patrimonial"></ion-radio>
+            </ion-item>
+            </ion-radio-group>
+        </ion-list>  
 
     <div style="padding: 10%;">
     <ion-label>Qual era sua relação com o agressor?</ion-label>
     <ion-list>
-        <ion-radio-group>
+        <ion-radio-group [(ngModel)]="relacaoVA">
           <ion-item>
             <ion-label>Não conheço o agressor</ion-label>
             <ion-radio name="relation" class="radio" value="desconhecido"></ion-radio>
@@ -52,12 +63,12 @@
 
           <ion-item>
             <ion-label> Namorado / Marido </ion-label>
-            <ion-radio name="relation" class="radio" value="namorado"></ion-radio>
+            <ion-radio name="relation" class="radio" value="namorado/marido"></ion-radio>
           </ion-item>
 
           <ion-item>
             <ion-label> Ex namorado / Ex Marido </ion-label>
-            <ion-radio name="relation" class="radio" value="ex"></ion-radio>
+            <ion-radio name="relation" class="radio" value="ex namorado/ ex marido"></ion-radio>
           </ion-item>
 
           <ion-item>
@@ -67,12 +78,12 @@
 
           <ion-item>
             <ion-label> Colega de trabalho </ion-label>
-            <ion-radio name="relation" class="radio" value="colega"></ion-radio>
+            <ion-radio name="relation" class="radio" value="colega de trabalho"></ion-radio>
           </ion-item>
 
           <ion-item>
             <ion-label> Amigo / conhecido </ion-label>
-            <ion-radio name="relation" class="radio" value="conhecido"></ion-radio>
+            <ion-radio name="relation" class="radio" value="conhecido / amigo"></ion-radio>
           </ion-item>
           </ion-radio-group>
       </ion-list>  
@@ -80,9 +91,10 @@
 
     <div style="padding: 10%;">
       <ion-label>Por gentileza, informe o endereço onde ocorreu o fato.</ion-label>
-      <ion-input placeholder="Endereço"></ion-input>
+      <ion-input placeholder="Endereço"  [(ngModel)]="enderecoOcorrido"></ion-input>
       <ion-label>Agora, nos informe a data do ocorrido.</ion-label>
-      <ion-datetime displayFormat="DD MM YYYY" placeholder="Data do ocorrido"></ion-datetime>
+      <ion-datetime displayFormat="DD MM YYYY" placeholder="Data do ocorrido" [(ngModel)]="dataOcorrido">
+      </ion-datetime>
     </div>
 
     <div style="padding: 10%;">
@@ -90,15 +102,15 @@
         ou essa foi a primeira vez?
       </ion-label>
       <ion-list>
-        <ion-radio-group>
+        <ion-radio-group [(ngModel)]="frequencia">
           <ion-item>
             <ion-label>Já aconteceu antes</ion-label>
-            <ion-radio name="happened" class="radio" value="aconteceu"></ion-radio>
+            <ion-radio name="happened" class="radio" value=" já aconteceu antes"></ion-radio>
           </ion-item>
 
           <ion-item>
             <ion-label>Esta foi a primeira vez</ion-label>
-            <ion-radio name="happened" class="radio" value="naoAconteceu"></ion-radio>
+            <ion-radio name="happened" class="radio" value="primeira vez"></ion-radio>
           </ion-item>
           </ion-radio-group>
       </ion-list>  
@@ -110,14 +122,15 @@
       Caso não saiba alguma das informações a seguir, deixe em branco. Lembre-se que quanto mais
       informações você souber, mais rápido será o processo da sua denúncia.
     </ion-label>
-    <ion-input placeholder="Nome completo"></ion-input>
-    <ion-datetime displayFormat="DD MM YYYY" placeholder="Data de nascimento"></ion-datetime>
-    <ion-input placeholder="Telefone"></ion-input>
-    <ion-input placeholder="CPF"></ion-input>
-    <ion-input placeholder="RG"></ion-input>
-    <ion-input placeholder="E-mail"></ion-input>
-    <ion-input placeholder="Endereço"></ion-input>
-    <ion-input placeholder="Local de trabalho"></ion-input>
+    <ion-input placeholder="Nome completo" [(ngModel)]="nomeDenunciado"></ion-input>
+    <ion-datetime displayFormat="DD MM YYYY" placeholder="Data de nascimento" [(ngModel)]="dataDeNascDenunciado">
+    </ion-datetime>
+    <ion-input placeholder="Telefone" [(ngModel)]="telefoneDenunciado"></ion-input>
+    <ion-input placeholder="CPF"  [(ngModel)]="cpfDenunciado"></ion-input>
+    <ion-input placeholder="RG" [(ngModel)]="RgDenunciado"></ion-input>
+    <ion-input placeholder="E-mail"  [(ngModel)]="emailDenunciado"></ion-input>
+    <ion-input placeholder="Endereço" [(ngModel)]="enderecoDenunciado"></ion-input>
+    <ion-input placeholder="Local de trabalho" [(ngModel)]="localDeTrabalho"></ion-input>
     </div>
     
     <div style="padding: 10%;">
@@ -126,7 +139,7 @@
         (cabelo, cor da pele, roupas) e características de comportamento e personalidade.
       </ion-label>
       <ion-item>
-          <ion-textarea placeholder="Descrição"></ion-textarea>
+          <ion-textarea placeholder="Descrição" [(ngModel)]="descricaoAgressor"></ion-textarea>
       </ion-item>
     </div>
 
@@ -136,10 +149,12 @@
         agressor, o que ele fez com você, etc.
       </ion-label>
       <ion-item>
-          <ion-textarea placeholder="Descrição"></ion-textarea>
+          <ion-textarea placeholder="Descrição" [(ngModel)]="descricaoOcorrido"></ion-textarea>
       </ion-item>
     </div>
 
-    <ion-button id="btnDenuncia" (click)="presentAlert()">Enviar denúncia</ion-button>
+    <ion-button id="btnDenuncia" (click)="enviar()">Enviar denúncia</ion-button>
+    <ion-button id="btnDenuncia" (click)="turnBack()">Voltar</ion-button>
+
   </div>
 </ion-content>
