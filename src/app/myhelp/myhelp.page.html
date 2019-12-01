@@ -1,27 +1,27 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title> 
-      <ion-img src="/assets/icon/logo.png" id="logo"></ion-img> 
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
 <ion-content>
   
-    <div id="content">
-        
-    <ion-card class="text">
-     <ion-label> 
-      Olá, precisamos que você responda todo esse formulário corretamente 
-      para que sua denúncia seja encaminhada da melhor forma possível ao órgão 
-      público responsável.
-      <br>
-      As perguntas que serão feitas são semelhantes às perguntas que você receberia
-      caso fosse até uma delegacia. 
-      <br>
-      *Suas informações serão divulgadas somente para a delegacia mais próxima. 
-    </ion-label>
-    </ion-card>
+    <div id="title">
+        <ion-label> 
+            Olá, precisamos que você responda todo esse formulário corretamente 
+            para que sua denúncia seja encaminhada da melhor forma possível ao órgão 
+            público responsável.
+            <br>
+            As perguntas que serão feitas são semelhantes às perguntas que você receberia
+            caso fosse até uma delegacia. 
+            <br>
+            *Suas informações serão divulgadas somente para a delegacia mais próxima. 
+          </ion-label>
+    </div>
 
+    <div id="content">
     <ion-list style="padding: 10%;">
         <ion-label>Qual foi o tipo de violência sofrida?</ion-label>
           <ion-radio-group [(ngModel)]="tipoDenuncia">
@@ -154,7 +154,7 @@
     </div>
 
     <ion-button id="btnDenuncia" (click)="enviar()">Enviar denúncia</ion-button>
-    <ion-button id="btnDenuncia" (click)="turnBack()">Voltar</ion-button>
 
   </div>
+
 </ion-content>

@@ -10,9 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { Global } from 'src/global';
+import { SMS } from '@ionic-native/sms/ngx';
 
-import { CameraPreview, CameraPreviewPictureOptions,
-  CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';
 
 
 @NgModule({
@@ -21,9 +21,8 @@ import { CameraPreview, CameraPreviewPictureOptions,
   imports: [BrowserModule, IonicModule.forRoot(), HttpClientModule, AppRoutingModule],
   providers: [
     StatusBar,
-    CameraPreview,  
-    //Geolocation,
-    //NativeGeocoder,
+    SMS,
+    Global,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

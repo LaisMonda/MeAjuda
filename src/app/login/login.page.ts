@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { UsuarioService } from '../usuario.service';
+import { Global } from 'src/global';
 
 @Component({
   selector: 'app-login',
@@ -10,23 +11,33 @@ import { UsuarioService } from '../usuario.service';
 export class LoginPage implements OnInit {
   private email: string;
   private senha: string;
-  private id: string;
+  private dados: any;
+  private id_user: string;
 
-  constructor(private router: Router, 
-  private usuario: UsuarioService) { }
+
+  constructor(private x: Global,private router: Router, 
+  private usuario: UsuarioService) { 
+  }
 
   ngOnInit() {
   }
-
-  login(email_user, senha_user) {
-    this.usuario.login(this.email, this.senha);
+  
+  async login(email_user, senha_user) {
+    this.dados = await this.usuario.login(this.email, this.senha);
     console.log(this.email);
     console.log(this.senha);
-    console.log(this.id);
+    console.log(this.dados.id);
+
+    this.x.id = this.dados.id;
+    
+    this.router.navigateByUrl('/tabs/tab1');
+   
+  }
+
+  cadastro(){
+    this.router.navigateByUrl('/cadastro');
   }
   
-  navegar(id){
-    this.router.navigateByUrl('/tab1', {state : {idenviado : id}});
-  }
+  
 
 }

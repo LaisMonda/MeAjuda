@@ -1,10 +1,10 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-icon id="arrow" name="md-arrow-round-back" size="large" (click)="turnBack()">
-    </ion-icon>
-    <ion-label id="top">Novo contato</ion-label>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
 <ion-content>
     <div id="content">
     <h1>Insira o novo contato</h1>
@@ -13,7 +13,7 @@
           <ion-col>
             <ion-item>
               <ion-input id="loginField" placeholder="Nome completo" type="text" 
-              [(ngModel)]="user" required></ion-input>
+              [(ngModel)]="nome" required></ion-input>
             </ion-item>
             <ion-item>
               <ion-input id="loginField" placeholder="Telefone" type="text" 

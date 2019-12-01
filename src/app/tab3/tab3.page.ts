@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { CameraPreview, CameraPreviewPictureOptions,
-CameraPreviewOptions} from '@ionic-native/camera-preview/ngx';
+import { Router } from '@angular/router';
+import { Global } from 'src/global';
+import { SMS } from '@ionic-native/sms/ngx';
+
 
 @Component({
   selector: 'app-tab3',
@@ -8,44 +10,16 @@ CameraPreviewOptions} from '@ionic-native/camera-preview/ngx';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  picture: string;
-
-  cameraOpts: CameraPreviewOptions = {
-    x: 0,
-    y: 0,
-    width: window.innerWidth,
-    height: window.innerHeight,
-    toBack: true
-  }
-
-  cameraPictureOpts: CameraPreviewPictureOptions = {
-    width: window.innerWidth,
-    height: window.innerHeight,
-    quality: 100 
-  }
   
-  constructor(private cameraPreview: CameraPreview) { }
+  constructor(private x: Global, private sms: SMS, private router: Router) {
+    console.log(this.x.id);
+  }
+
+  denuncia(){
+    this.router.navigateByUrl('/sos');
+    this.sms.send('67999190692', 'Preciso de ajuda, estou em perigo!');
+  }
+
   
-  
-  ionViewDidLoad() {
-    this.startCamera();
-  }
-
-  async startCamera() {
-    this.picture = null;
-    const result = await this.cameraPreview.startCamera(this.cameraOpts);
-    console.log(result);
-  }
-
-  switchCamera() {
-    this.cameraPreview.switchCamera();
-  }
-
-  async takePicture() {
-    const result = await this.cameraPreview.takePicture(this.cameraPictureOpts);
-    await this.cameraPreview.stopCamera();
-    this.picture = `data:image/jpeg;base64,${result}`;
-  }
-
 }
 

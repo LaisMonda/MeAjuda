@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular';
 import {Router} from '@angular/router';
 import { DenunciaService } from '../denuncia.service';
 import { Denuncia } from '../model/denuncia';
+import { Global } from 'src/global';
 
 
 
@@ -13,8 +14,10 @@ import { Denuncia } from '../model/denuncia';
 })
 export class MyhelpPage implements OnInit {
 
-  constructor(public alertController: AlertController, private router: Router,
-  private servico: DenunciaService) { }
+  constructor(private x: Global,public alertController: AlertController, private router: Router,
+  private servico: DenunciaService) { 
+    console.log(this.x.id);
+   }
 
     private tipoDenuncia: string;
     private nomeDenunciado: string;
@@ -48,6 +51,7 @@ export class MyhelpPage implements OnInit {
   }
 
   enviar(){
+    this.id_user = this.x.id;
     this.servico.insertDenuncia(this.tipoDenuncia, this.nomeDenunciado, this.dataDeNascDenunciado,
     this.enderecoDenunciado, this.telefoneDenunciado, this.RgDenunciado, this.cpfDenunciado,
     this.emailDenunciado, this.enderecoOcorrido, this.dataOcorrido, this.frequencia, this.relacaoVA, 
@@ -69,7 +73,7 @@ export class MyhelpPage implements OnInit {
       console.log(this.descricaoOcorrido);
       console.log(this.id_user);
 
-      this.router.navigateByUrl('/tabs/tab1');
+      //this.router.navigateByUrl('/tabs/tab1');
   }
 
   turnBack(){

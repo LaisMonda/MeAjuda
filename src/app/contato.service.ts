@@ -14,12 +14,18 @@ export class ContatoService {
     return this.request.get<Contato>(API2 + id);
   }
 
-  getAll(id_user) {
+  async getAll(id_user) {
+   
     const contato = {
-      id: id_user,
+      id_user : id_user,  
     };
-    this.request.post(API, JSON.stringify(contato),
-        {headers: new HttpHeaders({'Content-Type': 'application/json'})});
+
+    let resultadoAsync;
+
+     resultadoAsync = await this.request.post(API, JSON.stringify(contato),
+        {headers: new HttpHeaders({'Content-Type': 'application/json'})}).toPromise();
+        console.log(resultadoAsync);
+        return resultadoAsync;
   }
 
   async insertContact(nome, telefone, id_user ) {

@@ -14,13 +14,17 @@ div{
     border-radius: 20px;
 }
 #contador{
-   --background: linear-gradient(197deg, rgb(212, 103, 103) 0%, rgb(226, 96, 96) 13.5%, rgb(230, 64, 64) 33.33%, rgb(221, 35, 35) 100%) !important;
-    border-color:black; 
-    border-width: 8px; 
+   --background: #EB3349;  /* fallback for old browsers */
+   --background: -webkit-linear-gradient(to left, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+    --background: linear-gradient(to left, #F45C43, #EB3349); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
     align-content: center;
     height: 30%;
     align-items: center;
     align-self: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
 }
 
 

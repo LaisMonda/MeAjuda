@@ -1,10 +1,11 @@
 <ion-header>
-  <ion-toolbar>
-      <ion-icon id="arrow" name="md-arrow-round-back" size="large" (click)="turnBack()">
-      </ion-icon>
-      <ion-label id="top">Alterar dados</ion-label>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
 <ion-content>
     <div id="content">
     <ion-grid>
@@ -12,7 +13,7 @@
           <ion-col>
             <ion-item>
               <ion-input id="loginField" placeholder="Nome completo" type="text" 
-              [(ngModel)]="name" required value=""></ion-input>
+              [(ngModel)]="name" required value="{{nome}}"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-input placeholder="Sexo" type="text" 

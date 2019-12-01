@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content>
+  
   <ion-card class="card">
     <ion-card-title class="title-card">
     <b>  Gostaria de fazer uma denúncia? </b>
@@ -30,15 +31,15 @@
       </ion-card-title>
       <ion-list>
         <ion-item style="margin-top: 20px;">
-        <ion-label>Tipos de violência contra a mulher</ion-label>
+        <ion-label (click)="tipos()">Tipos de violência contra a mulher</ion-label>
         <ion-icon name="heart-dislike"></ion-icon>
         </ion-item>
         <ion-item style="margin-top: 20px;">
-          <ion-label>Lei Maria da Penha</ion-label>
+          <ion-label (click)="lei()">Lei Maria da Penha</ion-label>
           <ion-icon name="bookmarks"></ion-icon>
         </ion-item>
         <ion-item style="margin-top: 20px;">
-          <ion-label>O processo de denúncia</ion-label>
+          <ion-label (click)="processo()">O processo de denúncia</ion-label>
           <ion-icon name="time"></ion-icon>
         </ion-item>
       </ion-list>

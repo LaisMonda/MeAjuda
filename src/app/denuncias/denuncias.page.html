@@ -1,13 +1,16 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-icon id="arrow" name="md-arrow-round-back" size="large" (click)="turnBack()">
-    </ion-icon>
-    <ion-label id="top">Denúncias</ion-label>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
 <ion-content>
+  <div style="padding: 10%;">
     <ion-label>
       Aqui estão todas as Denúncias que você encaminhou. Você pode alterá-las, ou removê-las
        a qualquer momento.
     </ion-label>
-</ion-content>
+  </div>
+  </ion-content>

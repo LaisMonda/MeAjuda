@@ -7,18 +7,30 @@
 </ion-header>
 
 <ion-content>
-  <div class="title">Lista de contatos</div>
-  <div text-center>Seus contatos serão acionados caso você esteja em perigo, escolha com
-  cuidado as pessoas que você mais confia.</div>
-  
-  <ion-button class="button" (click)="cadastrar()">Novo contato</ion-button>
+  <div id="text">
+    <ion-button id="button" (click)="cadastrar()" shape="round">Novo contato</ion-button><br>
+    Seus contatos serão acionados caso você esteja em perigo. <br>
+    Escolha com cuidado as pessoas que você mais confia.<br>
+  </div>
+  <div>
 
-
-  <div *ngFor="let item of (listaContatos | async)" class="list">
-    <ion-item>
-      <ion-label>
-        {{item.nome}}
-      </ion-label>
-    </ion-item>
+    <ion-card *ngFor="let item of (listaContatos | async)">
+      <ion-item>
+        <ion-avatar>
+        </ion-avatar>
+        <ion-card-title>{{contato.id}}</ion-card-title>
+        <ion-card-subtitle>{{contato.nome}}</ion-card-subtitle>
+      </ion-item>
+      <ion-item>
+          <ion-avatar>
+          </ion-avatar>
+          <ion-label>Nenhum contato cadastrado</ion-label>
+      </ion-item>
+      <ion-item>
+          <ion-avatar>
+          </ion-avatar>
+          <ion-label>Nenhum contato cadastrado</ion-label>
+      </ion-item>
+    </ion-card>
   </div>
 </ion-content>

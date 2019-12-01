@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-img src="/assets/icon/logo.png" id="logo"></ion-img> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card id="sos">
+        <ion-card-title style="text-align: center; background-color: white; ">
+          Denúncia S.O.S ativada.
+        </ion-card-title>
+        <ion-card-content id="content-card">
+        <ion-label style="text-align: center; color: black; border: white; border-width: 5px;">
+        Seus contatos já foram avisados. Aguarde até que as autoridades cheguem.
+        </ion-label>
+      </ion-card-content>
+    </ion-card>
+    <ion-card-content style="text-align: center;">
+
+    <ion-button class="button" size="large" color="warning" (click)="turnBack()">
+        Cancelar denúncia
+    </ion-button>
+    </ion-card-content>
+</ion-content>

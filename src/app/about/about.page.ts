@@ -11,14 +11,16 @@ import { Observable } from 'rxjs';
 })
 export class AboutPage implements OnInit {
 
-  listaUsuarios: Observable<Usuario[]>
-
   constructor(private servico: UsuarioService,
               private router: Router) {
-    this.listaUsuarios = servico.getAll();
   }
 
   ngOnInit() {
   }
+
+ turnBack(){
+  this.router.navigateByUrl('/cadastro');
+}
+
 
 }

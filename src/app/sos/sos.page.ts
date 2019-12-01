@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-ajuda',
-  templateUrl: './ajuda.page.html',
-  styleUrls: ['./ajuda.page.scss'],
+  selector: 'app-sos',
+  templateUrl: './sos.page.html',
+  styleUrls: ['./sos.page.scss'],
 })
-export class AjudaPage implements OnInit {
+export class SosPage implements OnInit {
 
   constructor(private router: Router) { }
 
@@ -14,7 +14,6 @@ export class AjudaPage implements OnInit {
   }
 
   turnBack(){
-    this.router.navigateByUrl('/tabs/tab5');
-}
-
+    this.router.navigateByUrl("/tabs/tab3");
+  }
 }

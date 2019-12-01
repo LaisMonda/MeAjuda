@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 export class ChangePasswordPage implements OnInit {
 
   constructor(private router: Router) { }
-
+  private senha: string;
+  private novaSenha: string;
+  
   ngOnInit() {
   }
   

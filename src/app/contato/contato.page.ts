@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContatoService } from '../contato.service';
-
+import { Global } from 'src/global';
 
 
 @Component({
@@ -10,11 +10,13 @@ import { ContatoService } from '../contato.service';
   styleUrls: ['./contato.page.scss'],
 })
 export class ContatoPage implements OnInit {
-  private user: string;
+  private nome: string;
   private telefone: string;
   private id_user: string;
 
-  constructor(private router: Router, private servico: ContatoService) { }
+  constructor(private x: Global, private router: Router, private servico: ContatoService) {
+    console.log(this.x.id);
+   }
 
   ngOnInit() {
   }
@@ -24,8 +26,9 @@ export class ContatoPage implements OnInit {
   }
 
   cadastrar(){
-    this.servico.insertContact(this.user, this.telefone, this.id_user); 
-      console.log(this.user);
+    this.servico.insertContact(this.nome, this.telefone, this.id_user); 
+      this.id_user = this.x.id;
+      console.log(this.nome);
       console.log(this.telefone);
       console.log(this.id_user);
   }
