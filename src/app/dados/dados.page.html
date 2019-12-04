@@ -13,27 +13,31 @@
           <ion-col>
             <ion-item>
               <ion-input id="loginField" placeholder="Nome completo" type="text" 
-              [(ngModel)]="name" required value="{{nome}}"></ion-input>
+              [(ngModel)]="nome" required value="{{nome}}"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-input placeholder="Sexo" type="text" 
-                [(ngModel)]="sex" required value=""></ion-input>
-              </ion-item>
+                [(ngModel)]="sexo" required value=""></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input placeholder="telefone" type="text" 
+              [(ngModel)]="telefone" required value=""></ion-input>
+          </ion-item>
             <ion-item>
               <ion-input type="email" placeholder="Email" [(ngModel)]="email"
                required value=""></ion-input>
             </ion-item>
             <ion-item>
               <ion-datetime displayFormat="DD MM YYYY" placeholder="Data de Nascimento"
-              [(ngModel)]="date" required></ion-datetime>
+              [(ngModel)]="data" required></ion-datetime>
             </ion-item>  
             <ion-item>
-              <ion-input type="text" placeholder="Endereço" [(ngModel)]="adress"
+              <ion-input type="text" placeholder="Endereço" [(ngModel)]="endereco"
               required value=""></ion-input>
             </ion-item>
           </ion-col> 
         </ion-row>
       </ion-grid>
-        <ion-button id="btnAlterar" shape="round">Alterar dados</ion-button>
+        <ion-button id="btnAlterar" shape="round" (click)="mudarDados()">Alterar dados</ion-button>
       </div>
 </ion-content>

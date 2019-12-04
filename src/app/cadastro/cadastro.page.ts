@@ -31,7 +31,7 @@ export class CadastroPage implements OnInit {
 
   async cadastrar(){
     this.dados = await this.servico.insertUser(this.user, this.date, this.sexo, this.telefone,
-    this.senha, this.email, this.endereco); 
+    this.senha, this.email, this.endereco);
     console.log(this.user);
     console.log(this.date);
     console.log(this.sexo);
@@ -40,8 +40,8 @@ export class CadastroPage implements OnInit {
     console.log(this.email);
     console.log(this.endereco);
 
+    this.dados = await this.servico.login(this.email, this.senha);
     this.x.id = this.dados.id;
-
     console.log(this.x.id);
 
     this.router.navigateByUrl('/tabs/tab1');
@@ -51,7 +51,7 @@ export class CadastroPage implements OnInit {
         + 'seus dados estarão disponíves em seu perfil para quaisquer alterações.',
         buttons: ['OK']
       });
-        await alerta.present();
+    await alerta.present();
   }
 
   about(){

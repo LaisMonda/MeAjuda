@@ -10,8 +10,48 @@ export class UsuarioService {
   constructor(private request: HttpClient) {
   }
 
-  getOneUser(id) {
-    return this.request.get<Usuario>(API2 + id);
+  async getOneUser(id_user) {
+      return this.request.get<Usuario>(API2 + id_user);
+  }
+
+  async updateUser(id, name, date, sex, telephone, email, adress){
+    const usuario = {
+      id : id,
+      nome: name,
+      dataNascimento: date,
+      sexo: sex,
+      telefone: telephone,
+      email : email,
+      endereco: adress     
+    };
+
+   this.request.post(API5, JSON.stringify(usuario),
+        {headers: new HttpHeaders({'Content-Type': 'application/json'})}).subscribe(
+          data => {
+            console.log('POST deu certo ', data);
+          },
+          error  => {
+            console.log('Error', error);
+          }
+      );
+  }
+
+  async updatePass(id, senhaAtual, senhaNova){
+    const usuario = {
+      id : id,
+      senhaAtual: senhaAtual,
+      senhaNova: senhaNova
+    };
+
+   this.request.post(API6, JSON.stringify(usuario),
+        {headers: new HttpHeaders({'Content-Type': 'application/json'})}).subscribe(
+          data => {
+            console.log('POST deu certo ', data);
+          },
+          error  => {
+            console.log('Error', error);
+          }
+      );
   }
 
   async login(email_user,senha_user) {
@@ -28,8 +68,6 @@ export class UsuarioService {
         console.log(resultadoAsync);
         return resultadoAsync;
   }
-
- 
 
   getAll() {
     return this.request.get<Usuario[]>(API);
@@ -62,10 +100,12 @@ export class UsuarioService {
 
 }
 
-const API2 = 'https://andreqbs.com.br/api/product/read_one.php?id=';
+const API2 = 'http://localhost/api/api_2/usuario/listarUm.php';
 const API = 'http://localhost/api/api_2/usuario/listar.php';
 const API3 = 'http://localhost/api/api_2/usuario/novo.php';
 const API4 = 'http://localhost/api/api_2/usuario/login.php';
+const API5 = 'http://localhost/api/api_2/usuario/update.php';
+const API6 = 'http://localhost/api/api_2/usuario/updatePass.php';
 
 
 

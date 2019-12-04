@@ -92,7 +92,7 @@ export class OtherhelpPage implements OnInit {
         console.log(this.descricaoOcorrido);
         console.log(this.id_user);
         
-  
+      this.x.denuncias = 1 + this.x.denuncias;
   }
   
   turnBack(){

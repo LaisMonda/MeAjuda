@@ -1,7 +1,7 @@
 export interface Contato //tabela do banco
 {
-     $id;
-     $nome;
-     $telefone;
-     $id_user;
+     id: string;
+     nome: string;
+     telefone: string;
+     id_user: string;
 }

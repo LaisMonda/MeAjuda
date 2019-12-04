@@ -36,6 +36,8 @@ export class MyhelpPage implements OnInit {
     private descricaoOcorrido : string;
     private id_user : string;
 
+    denuncias: any;
+
   ngOnInit() {
   }
 
@@ -50,7 +52,7 @@ export class MyhelpPage implements OnInit {
     await alert.present();
   }
 
-  enviar(){
+  async enviar(){
     this.id_user = this.x.id;
     this.servico.insertDenuncia(this.tipoDenuncia, this.nomeDenunciado, this.dataDeNascDenunciado,
     this.enderecoDenunciado, this.telefoneDenunciado, this.RgDenunciado, this.cpfDenunciado,
@@ -73,7 +75,16 @@ export class MyhelpPage implements OnInit {
       console.log(this.descricaoOcorrido);
       console.log(this.id_user);
 
-      //this.router.navigateByUrl('/tabs/tab1');
+      this.router.navigateByUrl('/tabs/tab1');
+      const alert = await this.alertController.create({
+        header: 'Denúncia encaminhada com sucesso!!',
+        message: 'A delegacia local entrará em contato com você através dos seus dados em breve, obrigada pela confiança!',
+        buttons: ['OK']
+      });
+  
+      await alert.present();
+
+      this.x.denuncias += 1;  
   }
 
   turnBack(){

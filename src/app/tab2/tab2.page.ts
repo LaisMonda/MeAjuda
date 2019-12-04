@@ -15,15 +15,19 @@ export class Tab2Page implements OnInit {
   private dados: any;
   id: string;
 
-  listaContatos: Observable<Contato[]>
+  listaContatos: Observable<Contato[]>;
 
   constructor(private x: Global, private servico: ContatoService, private router: Router) {
-     console.log(this.x.id);
-     this.id = this.x.id;
-     this.listaContatos = servico.getAll(this.id);
-    }
+  }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(){
+    console.log(this.x.id);
+    this.id = this.x.id;
+    this.listaContatos = this.servico.getOneContact(this.id);
+    console.log(this.listaContatos);
   }
 
   cadastrar(){

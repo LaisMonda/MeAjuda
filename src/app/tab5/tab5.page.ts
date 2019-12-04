@@ -19,7 +19,7 @@ export class Tab5Page implements OnInit {
     this.id = this.x.id;
     }
 
-    mostrarDados(){
+   /* mostrarDados(){
       this.servico.getOneUser(this.id).subscribe((data: Usuario) =>
       this.usuario = {
           id: data.$id,
@@ -30,7 +30,7 @@ export class Tab5Page implements OnInit {
           endereco: data.$endereço
     });
         this.id = this.usuario.id;
-    }
+    }*/
 
   ngOnInit() {
   }
@@ -45,6 +45,12 @@ export class Tab5Page implements OnInit {
   dados(){
     this.router.navigateByUrl('/dados');
   }
-
+  logout(){
+    this.x.id = "null";
+    this.id = "null";
+    this.router.navigateByUrl('/login');
+    console.log(this.id);
+    console.log(this.x.id);
+  }
 
 }

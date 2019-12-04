@@ -11,21 +11,11 @@ export class ContatoService {
   }
 
   getOneContact(id) {
-    return this.request.get<Contato>(API2 + id);
+    return this.request.get<Contato[]>(API2+id);
   }
 
-  async getAll(id_user) {
-   
-    const contato = {
-      id_user : id_user,  
-    };
-
-    let resultadoAsync;
-
-     resultadoAsync = await this.request.post(API, JSON.stringify(contato),
-        {headers: new HttpHeaders({'Content-Type': 'application/json'})}).toPromise();
-        console.log(resultadoAsync);
-        return resultadoAsync;
+  getAll(id_user) {
+    return this.request.get<Contato[]>(API + id_user);
   }
 
   async insertContact(nome, telefone, id_user ) {
@@ -47,7 +37,7 @@ export class ContatoService {
 }
   }
 
-const API2 = 'https://andreqbs.com.br/api/product/read_one.php?id=';
+const API2 = 'http://localhost/api/api_2/contato/listarUm.php?id=';
 const API = 'http://localhost/api/api_2/contato/listar.php';
 const  API3 = 'http://localhost/api/api_2/contato/novo.php';
 

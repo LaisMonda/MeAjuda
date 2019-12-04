@@ -4,6 +4,7 @@ import {Injectable} from '@angular/core';
 
 export class Global{
     id = 'null';
+    denuncias = 0;
 }
 
     

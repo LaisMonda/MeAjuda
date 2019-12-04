@@ -10,15 +10,25 @@ import { SMS } from '@ionic-native/sms/ngx';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
+  denuncias: number;
+  id: string;
   
   constructor(private x: Global, private sms: SMS, private router: Router) {
     console.log(this.x.id);
+    this.id = this.x.id;
+  }
+
+  ionViewWillEnter(){
+  this.denuncias = this.x.denuncias;
   }
 
   denuncia(){
     this.router.navigateByUrl('/sos');
+
     this.sms.send('67999190692', 'Preciso de ajuda, estou em perigo!');
   }
+
+
 
   
 }

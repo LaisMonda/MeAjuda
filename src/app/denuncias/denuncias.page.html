@@ -13,4 +13,24 @@
        a qualquer momento.
     </ion-label>
   </div>
+<div>
+  <ion-card *ngFor="let item of (listaDenncias | async)">
+    <ion-item>
+      <ion-avatar>
+      </ion-avatar>
+      <ion-card-title>{{denuncia.id}}</ion-card-title>
+      <ion-card-subtitle>{{denuncia.nome}}</ion-card-subtitle>
+    </ion-item>
+    <ion-item>
+        <ion-avatar>
+        </ion-avatar>
+        <ion-label>Nenhum contato cadastrado</ion-label>
+    </ion-item>
+    <ion-item>
+        <ion-avatar>
+        </ion-avatar>
+        <ion-label>Nenhum contato cadastrado</ion-label>
+    </ion-item>
+  </ion-card>
+</div>
   </ion-content>
